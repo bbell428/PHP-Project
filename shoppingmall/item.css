@@ -1,0 +1,293 @@
+.navTop {
+  display: flex;
+  border-bottom: 1px solid;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+}
+
+.navTop a {
+  position: relative;
+  right: 60px;
+  text-decoration: none;
+  color: grey;
+  text-align: center;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.navBtn:hover {
+  border-bottom: 2px solid;
+}
+
+.navBottom {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.navBottom a {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  #search {
+    display: none;
+  }
+}
+
+.navBottom input[type="text"] {
+  display: flex;
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  right: 70px;
+  display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  #search {
+    display: none;
+  }
+}
+
+.bodyTop {
+  display: flex;
+  justify-content: center;
+  height: 55px;
+  width: 100%;
+  background-color: #454545;
+}
+
+.TopBodyBtn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.TopBodyBtn a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+}
+
+.Btn {
+  font-size: 20px;
+  width: 100px;
+  display: flex;
+}
+
+.articleContainer {
+  height: 500px;
+}
+
+.listarticleTitle {
+  font-size: 30px;
+  padding-left: 22px;
+}
+
+.Home_Icon {
+  padding-left: 22px;
+}
+
+article {
+  position: relative;
+  width: 1300px;
+  height: 1300px;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  border-bottom: 1px solid;
+  width: 100%;
+  position: relative;
+  top: 30px;
+  font-size: 24px;
+}
+
+.item-icon {
+  position: relative;
+  bottom: 20px;
+  padding-left: 20px;
+}
+
+.item-contentContainer {
+  position: relative;
+  top: 20px;
+  width: 1300px;
+  height: 700px;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.item-content-title {
+  display: flex;
+  box-sizing: border-box;
+  height: 90px;
+}
+
+.item-icons {
+  display: flex;
+  position: relative;
+  top: 20px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  border-color: lightgrey;
+}
+
+.item-content {
+  display: flex;
+  width: 670px;
+  height: 590px;
+  position: relative;
+  top: 70px;
+}
+
+.item-cost {
+  display: flex;
+  position: relative;
+  top: 30px;
+  flex-direction: column;
+  border-bottom: 1px solid;
+  border-color: lightgray;
+}
+
+strong {
+  font-size: 20px;
+}
+
+.item-exam {
+  display: flex;
+  top: 30px;
+  position: relative;
+  flex-direction: column;
+  border-bottom: 1px solid;
+  border-color: lightgray;
+}
+
+.item-select {
+  position: relative;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-costTotal {
+  display: flex;
+  position: relative;
+  top: 70px;
+  font-size: 25px;
+}
+
+.item-count {
+  display: flex;
+  position: relative;
+  top: 50px;
+  gap: 30px;
+}
+
+select {
+  height: 40px;
+}
+
+.item-costs {
+  display: flex;
+}
+
+.item-img {
+  position: relative;
+  top: 70px;
+  width: 585px;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Footercontainer {
+  display: flex;
+  border: 1px solid;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerTitle {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  padding-right: 10px;
+  display: flex;
+  margin: 2px solid;
+}
+
+.footerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerMain {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 200px;
+  border-left: 2px solid;
+  padding: 20px;
+}
+
+.footerMain:first-child {
+  border-left: none;
+}
+
+.footerMainTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 60px;
+}
+
+.footerContent {
+  display: flex;
+  margin-right: auto;
+  font-size: 14px;
+  position: relative;
+  margin-left: auto;
+  top: 80px;
+}
+
+.event {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #454545;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+
+.number {
+  width: 30%;
+  font-size: 30px;
+}

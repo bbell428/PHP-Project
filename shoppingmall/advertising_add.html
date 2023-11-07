@@ -1,0 +1,31 @@
+<!-- 광고 추가 페이지 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>광고 추가</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <li>
+      광고 추가하는 화면
+      <form
+        action="advertising_add_post.php"
+        method="post"
+        enctype="multipart.form-data">
+        <!-- 파일 업로드를 하기 위해 사용 -->
+        <table width-100% border="1">
+          <tr>
+            <td>사진</td>
+            <td><input type="file" name="img" size="10" /></td>
+          </tr>
+
+          <td colspan="2">
+            <input type="submit" value="등록하기" />
+          </td>
+        </table>
+      </form>
+    </li>
+  </body>
+</html>

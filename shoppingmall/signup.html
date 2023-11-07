@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>회원가입</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      input[type="text"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        float: right;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .signup {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="main.css" />
+    <div class="navBottom">
+      <a href="main.php">🐂우진사</a>
+    </div>
+    <hr />
+    <div class="signup">
+      <h2>회원가입</h2>
+      <p>회원이 되어주셔서 감사드립니다.</p>
+      <hr />
+      <div class="container">
+        <form action="signup.php" method="post">
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">이메일</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                name="email"
+                placeholder="User email.."
+                id="email" />
+              <button type="button" id="chkbtn" onclick="checkEmail()">
+                중복확인
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">이름</label>
+            </div>
+            <div class="col-75">
+              <input type="text" name="uname" placeholder="User name.." />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">비밀번호</label>
+            </div>
+            <div class="col-75">
+              <input type="password" name="pwd" placeholder="Password.." />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">전화번호</label>
+            </div>
+            <div class="col-75">
+              <input type="text" name="telno" placeholder="Mobile.." />
+            </div>
+          </div>
+          <div class="row">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function checkEmail() {
+        const email = document.getElementById("email");
+        const uid = email.value;
+        if (email.value.length == 0) {
+          alert("이메일을 입력하여야 합니다.");
+        } else {
+          const xhs = new XMLHttpRequest();
+          xhs.onreadystatechange = function () {
+            if (xhs.readyState === xhs.DONE) {
+              if (xhs.status === 200) {
+                //alert(xhs.responseText);
+                const result = JSON.parse(xhs.responseText);
+                //alert(result.succ);
+                if (result.succ === true) alert("이미 등록된 이메일입니다.");
+                else alert("사용가능한 이메일입니다.");
+              }
+            }
+          };
+          xhs.open("GET", "checkemail.php?uid=" + uid);
+          xhs.send();
+        }
+      }
+      /*
+			$("#chkbtn").click(function(e){
+				const email = $('#email').val();
+				if(email.length == 0) {
+					alert("이메일을 입력하여야 합니다.");
+					return;
+				}
+				//alert(email);
+				$.ajax({
+					url: 'checkemail.php',
+					data: {uid: email},
+					type: 'GET',
+					dataType: 'json',
+					success: function(data) {
+						alert(data.succ);
+						if(data.succ)
+							alert('이미 등록된 이메일입니다.');
+						else 
+							alert('사용가능한 이메일입니다.');
+					}
+				});
+			});*/
+    </script>
+  </body>
+</html>

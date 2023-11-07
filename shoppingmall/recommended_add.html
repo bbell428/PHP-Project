@@ -1,0 +1,61 @@
+<!-- 추천 상품 추가 페이지 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>상품 추가</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <li>
+      추천 상품 추가하는 화면
+      <form
+        action="recommended_add_post.php"
+        method="post"
+        enctype="multipart.form-data">
+        <!-- 파일 업로드를 하기 위해 사용 -->
+        <table width-100% border="1">
+          <tr>
+            <td>상품명</td>
+            <td><input type="text" name="item" size="30" /></td>
+          </tr>
+
+          <tr>
+            <td>짧은 설명</td>
+            <td><input type="text" name="comment" size="50" /></td>
+          </tr>
+
+          <tr>
+            <td>금액</td>
+            <td><input type="text" name="price" size="20" /></td>
+          </tr>
+
+          <tr>
+            <td>종류</td>
+            <td>
+              <input type="radio" name="kind" value="모자" checked /> 모자
+              <input type="radio" name="kind" value="상의" /> 상의
+              <input type="radio" name="kind" value="하의" /> 하의
+              <input type="radio" name="kind" value="신발" /> 신발
+            </td>
+          </tr>
+
+          <tr>
+            <td>설명</td>
+            <td><textarea name="memo" cols="50" rows="10"></textarea></td>
+          </tr>
+
+          <tr>
+            <td>사진</td>
+            <td><input type="file" name="img" size="10" /></td>
+          </tr>
+
+          <td colspan="2">
+            <input type="submit" value="등록하기" />
+          </td>
+        </table>
+      </form>
+    </li>
+  </body>
+</html>
